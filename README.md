@@ -29,4 +29,37 @@ if __name__ == '__main__':
     # 生成60*60单字图
     get_background('single_pic', 60)
 ```
-344*344是
+344*344是验证码背景图，60*60是单字的背景图
+
+### 2.2 运行`draw.py`
+```
+if __name__ == '__main__':
+    with open('Words/four', 'r', encoding='utf-8') as g:
+        strs = [i.strip() for i in g.readlines()]
+    gen_pic(strs, 20000)
+```
+模拟生成验证码, 传入4字或5字的字符串以及生成的张数
+
+### 2.3 运行`single.py`
+```
+if __name__ == '__main__':
+    with open('Words/one', 'r', encoding='utf-8') as g:
+        strs = [i.strip() for i in g.readlines()]
+
+    nums_thread = 4
+
+    per_step = len(strs) // nums_thread
+
+    threads = []
+    for i in range(nums_thread):
+        threads.append(threading.Thread(target=gen_pic, args=(strs[per_step * i:per_step * (i + 1)], 1000)))
+
+    for i in range(nums_thread):
+        threads[i].start()
+
+    for i in range(nums_thread):
+        threads[i].join()
+```
+多线程生成单字图片，虽然`python`的多线程没啥用，但对于爬虫和IO操作还是有帮助的
+
+### 2.4 运行`single.py`中途出现错误，可运行`single_add.py`
