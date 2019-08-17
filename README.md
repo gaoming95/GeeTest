@@ -2,8 +2,12 @@
 模拟极验3.0点击文字图片的生成方式，但做不到完全模拟。可以利用该模拟的数据做模型的预训练，然后迁移，效果应该可以。
 
 ![验证码](https://github.com/gaoming95/GeeTest/blob/master/result/0.jpg)![验证码](https://github.com/gaoming95/GeeTest/blob/master/result/1.jpg)
+```
+0	文本:中性染料	位置[(71, 236, 142, 307), (135, 150, 210, 225), (193, 84, 267, 158), (216, 26, 291, 101)]
+1	文本:值得注意	位置[(13, 228, 90, 305), (242, 28, 309, 95), (274, 148, 332, 206), (162, 112, 222, 172)]
+```
 
-![单字](https://github.com/gaoming95/GeeTest/blob/master/Single/%E5%95%8A/0.jpg)![单字](https://github.com/gaoming95/GeeTest/blob/master/Single/%E5%95%8A/1.jpg)
+![单字:啊](https://github.com/gaoming95/GeeTest/blob/master/Single/%E5%95%8A/0.jpg)![单字:啊](https://github.com/gaoming95/GeeTest/blob/master/Single/%E5%95%8A/1.jpg)
 
 
 ## 1 资源下载
